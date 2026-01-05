@@ -1,0 +1,192 @@
+//basic recursion to print name n times
+//time complexity : O(n)
+//space complexity : O(n) [stack space]
+/*import java.util.*;
+public class Recursion {
+    static void print(int i,int n)
+    {
+        if(i>n)
+        {
+            return;
+        }
+        System.out.println(i);
+        print(i+1,n);
+    }
+    public static void main(String[] args) {
+        int n;
+        Scanner in = new Scanner(System.in);
+        n = in.nextInt();
+        print(1,n);
+    }
+}*/
+//print n to 1 numbers
+/*import java.util.*;
+public class Recursion {
+    static void print(int i,int n)
+    {
+        if(i<1)
+        {
+            return;
+        }
+        System.out.println(i);
+        print(i-1,n);
+    }
+    public static void main(String[] args) {
+        int n;
+        Scanner in = new Scanner(System.in);
+        n = in.nextInt();
+        print(n,n);
+    }
+}*/
+//print 1 to n using backtrack
+/*import java.util.*;
+public class Recursion {
+    static void print(int i,int n)
+    {
+        if(i<1)
+        {
+            return;
+        }
+        print(i-1,n);          //first the function gets called until i<1
+        System.out.println(i);    //after all the function call gets over it prints from the back that is 1 to n
+    }
+    public static void main(String[] args) {
+        int n;
+        Scanner in = new Scanner(System.in);
+        n = in.nextInt();
+        print(n,n);
+    }
+}*/
+//parameterized way of sum of first n numbers
+/*import java.util.*;
+public class Recursion {
+    static void sum1(int i,int sum)
+    {
+        if(i<1)
+        {
+            System.out.println(sum);
+            return;
+        }
+       sum1(i-1,sum+i);
+    }
+    public static void main(String[] args) {
+        int n;
+        Scanner in = new Scanner(System.in);
+        n = in.nextInt();
+        sum1(n,0);
+    }
+}*/
+//Functional way of finding the sum of n numbers.
+/*import java.util.*;
+public class Recursion {
+    static int sum(int n)
+    {
+        if(n==0)
+        {
+            return 0;
+        }
+        return n+sum(n-1);
+    }
+    public static void main(String[] args) {
+        int n;
+        Scanner in = new Scanner(System.in);
+        n = in.nextInt();
+        System.out.println(sum(n));
+    }
+}*/
+//functional method of finding factorial using recursion
+//time complexity : O(n)
+//space complexity : O(n)
+/*import java.util.*;
+public class Recursion {
+    static int fact(int n)
+    {
+        if(n==0)
+        {
+            return 1;
+        }
+        return n * fact(n-1);
+    }
+    public static void main(String[] args) {
+        int n;
+        Scanner in = new Scanner(System.in);
+        n = in.nextInt();
+        System.out.println(fact(n));
+    }
+}*/
+//reverse an array using recursion.
+/*import java.util.*;
+
+import static java.util.Collections.reverse;
+
+public class Recursion {
+    static void reverse(int[] arr,int n,int i)
+    {
+        if(i>=n/2)
+        {
+            return;
+        }
+        int temp = arr[i];
+        arr[i] = arr[n-i-1];
+        arr[n-i-1] = temp;
+        reverse(arr,n,i+1);
+    }
+    public static void main(String[] args) {
+        int n;
+        Scanner in = new Scanner(System.in);
+        n = in.nextInt();
+        int[] arr = new int[n];
+        for(int i =0;i<n;i++)
+        {
+          arr[i] = in.nextInt();
+        }
+        reverse(arr,n , 0 );
+        System.out.println(Arrays.toString(arr));
+    }
+}*/
+//Recursion function to check whether the given string is palindrome or not.
+/*import java.util.*;
+
+public class Recursion {
+
+    static boolean palindrome(String s, int n, int i) {
+        if (i >= n / 2) {
+            return true;
+        }
+        if (s.charAt(i) != s.charAt(n - i - 1)) {
+            return false;
+        }
+        return palindrome(s, n, i + 1);
+    }
+
+    public static void main(String[] args) {
+        String s = "NAJLA";
+        int n = s.length();
+
+        System.out.println(palindrome(s, n, 0));
+    }
+}*/
+//Recursion function to print Nth Fibonacci numbers
+//time complexity order of 2 to the power of n.
+import java.util.*;
+
+public class Recursion {
+    static int fibo(int n) {
+        if (n <= 1) {
+            return n;
+        }
+        return fibo(n - 1) + fibo(n - 2);  //1 1 2 3 5 8 13
+    }
+
+    public static void main(String[] args) {
+        int n;
+        Scanner in = new Scanner(System.in);
+        n = in.nextInt();
+        System.out.println(fibo(n));
+    }
+}
+
+
+
+
+
